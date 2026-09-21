@@ -195,7 +195,7 @@ export function renderPlaywrightSpec(ticket: TicketInput, clauses: AtomicClause[
     )
     .join("\n");
 
-  const source = `import { test, expect } from "../fixtures/tests";
+  const source = `import { test, expect } from "../../fixtures/tests";
 import { LoginPage } from "../../page_objects/pages/web/LoginPage";
 import { InboxPage } from "../../page_objects/pages/web/InboxPage";
 import { TicketPage } from "../../page_objects/pages/web/TicketPage";
