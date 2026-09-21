@@ -1,0 +1,9 @@
+{
+  "title": "title",
+  "body": "body",
+  "acceptanceCriteria": ["acceptance criteria", "ac", "criterios de aceptacion"],
+  "labels": {
+    "testCase": "test-case",
+    "divergence": "divergence"
+  }
+}

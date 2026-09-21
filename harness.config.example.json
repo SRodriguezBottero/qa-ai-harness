@@ -1,0 +1,35 @@
+{
+  "platforms": [
+    {
+      "name": "web-app",
+      "testDir": "_tests/web",
+      "pageObjectDir": "page_objects/pages/web",
+      "authProfilesFile": "fixtures/tests.ts",
+      "defaultProfile": "defaultUserTest",
+      "baseUrl": "http://127.0.0.1:4477"
+    }
+  ],
+  "issueTracker": {
+    "type": "github-issues",
+    "cloudId": "",
+    "fieldMapping": "config/issue-fields.json"
+  },
+  "testManagement": {
+    "type": "none",
+    "folderTaxonomy": "config/test-mgmt-folders.json"
+  },
+  "ciSource": {
+    "type": "playwright-json",
+    "projectIds": {
+      "web-app": "local"
+    }
+  },
+  "codeStyle": "use-repo-prettier-config",
+  "jev": {
+    "enabled": true,
+    "mode": "auto",
+    "model": "jev-latest",
+    "guardrailThreshold": 0.72,
+    "triageConfidenceFloor": 0.55
+  }
+}
