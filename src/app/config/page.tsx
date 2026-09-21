@@ -10,13 +10,13 @@ export default function ConfigPage() {
       <header>
         <h1 className="font-heading text-4xl">harness.config.json</h1>
         <p className="mt-2 text-muted-foreground">
-          El desacoplador central. Cada skill lee esto y carga solo el adaptador que corresponde.
+          The central decoupler. Each skill reads this and loads only the matching adapter.
         </p>
       </header>
       <Card>
         <CardHeader>
-          <CardTitle>Config activa</CardTitle>
-          <CardDescription>Copiá harness.config.example.json para un equipo nuevo.</CardDescription>
+          <CardTitle>Active config</CardTitle>
+          <CardDescription>Copy harness.config.example.json for a new team.</CardDescription>
         </CardHeader>
         <CardContent>
           <pre className="overflow-auto rounded-lg bg-background p-3 font-mono text-xs">
@@ -26,7 +26,7 @@ export default function ConfigPage() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Adaptadores resueltos</CardTitle>
+          <CardTitle>Resolved adapters</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 font-mono text-xs">
           {Object.entries(adapters).map(([key, value]) => (

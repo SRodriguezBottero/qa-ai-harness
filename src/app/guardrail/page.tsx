@@ -46,18 +46,19 @@ export default function GuardrailPage() {
       <header>
         <h1 className="font-heading text-4xl">Jev guardrail</h1>
         <p className="mt-2 text-muted-foreground">
-          Antes de que un agente ejecute Playwright contra un entorno real, Jev evalúa si la acción es
-          destructiva o de producción. Sin <code>TYPESAFE_API_KEY</code> corre el mock calibrado.
+          Before an agent runs Playwright against a real environment, Jev evaluates whether the
+          action is destructive or production-bound. Without <code>TYPESAFE_API_KEY</code> the
+          calibrated mock runs.
         </p>
       </header>
       <Card>
         <CardHeader>
-          <CardTitle>Acción propuesta</CardTitle>
-          <CardDescription>Probá una acción de lectura vs una de wipe.</CardDescription>
+          <CardTitle>Proposed action</CardTitle>
+          <CardDescription>Try a read action vs a wipe.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="space-y-1">
-            <Label htmlFor="action">Acción</Label>
+            <Label htmlFor="action">Action</Label>
             <Input id="action" value={action} onChange={(e) => setAction(e.target.value)} />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -66,17 +67,17 @@ export default function GuardrailPage() {
               <Input id="target" value={target} onChange={(e) => setTarget(e.target.value)} />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="env">Entorno</Label>
+              <Label htmlFor="env">Environment</Label>
               <Input id="env" value={environment} onChange={(e) => setEnvironment(e.target.value)} />
             </div>
           </div>
           <div className="space-y-1">
-            <Label htmlFor="notes">Notas</Label>
+            <Label htmlFor="notes">Notes</Label>
             <Textarea id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} />
           </div>
           <div className="flex flex-wrap gap-2">
             <Button type="button" onClick={run} disabled={loading}>
-              {loading ? "Evaluando…" : "Evaluar con Jev"}
+              {loading ? "Evaluating…" : "Evaluate with Jev"}
             </Button>
             <Button
               type="button"
@@ -88,7 +89,7 @@ export default function GuardrailPage() {
                 setNotes("Read-only Playwright snapshot");
               }}
             >
-              Cargar acción segura
+              Load safe action
             </Button>
           </div>
         </CardContent>
@@ -103,7 +104,7 @@ export default function GuardrailPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Decisión
+              Decision
               <Badge variant={result.decision === "block" ? "destructive" : "secondary"}>
                 {result.decision}
               </Badge>

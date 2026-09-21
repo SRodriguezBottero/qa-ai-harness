@@ -55,7 +55,7 @@ export default function ScaffoldPage() {
         body: JSON.stringify({ id, title, body, mode }),
       });
       const json = (await response.json()) as ScaffoldResponse;
-      if (!response.ok) throw new Error(json.error || "No se pudo generar el spec");
+      if (!response.ok) throw new Error(json.error || "Could not generate the spec");
       setResult(json);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Error");
@@ -69,15 +69,15 @@ export default function ScaffoldPage() {
       <header>
         <h1 className="font-heading text-4xl">Scaffold from ticket</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          El skill genérico lee el ticket, descompone cada criterio y solo usa page objects conocidos.
-          Adversarial genera un test rojo si un requisito firme no está implementado.
+          The generic skill reads the ticket, splits each criterion, and only uses known page objects.
+          Adversarial generates a failing test if a firm requirement is not implemented.
         </p>
       </header>
       <div className="grid gap-4 lg:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Ticket</CardTitle>
-            <CardDescription>Pegá criterios de aceptación, uno por línea.</CardDescription>
+            <CardDescription>Paste acceptance criteria, one per line.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="grid gap-3 sm:grid-cols-2">
@@ -86,12 +86,12 @@ export default function ScaffoldPage() {
                 <Input id="ticket-id" value={id} onChange={(e) => setId(e.target.value)} />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="ticket-title">Título</Label>
+                <Label htmlFor="ticket-title">Title</Label>
                 <Input id="ticket-title" value={title} onChange={(e) => setTitle(e.target.value)} />
               </div>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="ticket-body">Cuerpo</Label>
+              <Label htmlFor="ticket-body">Body</Label>
               <Textarea
                 id="ticket-body"
                 value={body}
@@ -115,7 +115,7 @@ export default function ScaffoldPage() {
                 Conformance
               </Button>
               <Button type="button" onClick={run} disabled={loading}>
-                {loading ? "Generando…" : "Generar spec"}
+                {loading ? "Generating…" : "Generate spec"}
               </Button>
             </div>
           </CardContent>
@@ -124,13 +124,13 @@ export default function ScaffoldPage() {
           <CardHeader>
             <CardTitle>Spec</CardTitle>
             <CardDescription>
-              {result?.spec.file ?? "Todavía no hay archivo. Generá un spec para verlo."}
+              {result?.spec.file ?? "No file yet. Generate a spec to see it."}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {error ? (
               <Alert>
-                <AlertTitle>No se pudo generar</AlertTitle>
+                <AlertTitle>Could not generate</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             ) : result ? (
@@ -138,7 +138,7 @@ export default function ScaffoldPage() {
                 {result.spec.source}
               </pre>
             ) : (
-              <p className="text-sm text-muted-foreground">El resultado aparece acá.</p>
+              <p className="text-sm text-muted-foreground">The result shows up here.</p>
             )}
           </CardContent>
         </Card>
@@ -146,15 +146,15 @@ export default function ScaffoldPage() {
       {result ? (
         <Card>
           <CardHeader>
-            <CardTitle>Matriz de trazabilidad</CardTitle>
+            <CardTitle>Traceability matrix</CardTitle>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Cláusula</TableHead>
-                  <TableHead>Capa</TableHead>
-                  <TableHead>Nota</TableHead>
+                  <TableHead>Clause</TableHead>
+                  <TableHead>Layer</TableHead>
+                  <TableHead>Note</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

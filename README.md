@@ -1,20 +1,18 @@
 # QA AI Harness
 
-Harness genérico de QA asistido por IA para equipos que ya usan Playwright. Separa **workflow** (skills publicables) de **adaptador** (Jira, Linear, GitHub Issues, CI, gestor de casos).
+A generic AI-assisted QA harness for teams that already use Playwright. It separates **workflow** (publishable skills) from **adapter** (Jira, Linear, GitHub Issues, CI, test-case manager).
 
-Cursor genera y repara specs. Playwright los ejecuta. **Jev** (TypeSafe System One) toma decisiones baratas: guardrail antes de una acción riesgosa, triage después de un fail. Sin `TYPESAFE_API_KEY` esas decisiones corren un mock local.
+Cursor generates and repairs specs. Playwright runs them. **Jev** (TypeSafe System One) makes cheap decisions: a guardrail before a risky action, triage after a fail. Without `TYPESAFE_API_KEY` those decisions run a local mock.
 
-No incluye nombres de productos ni cuentas de un cliente concreto.
-
-## Qué incluye esta rebanada
+## What this slice includes
 
 - Skills: `scaffold-tests-from-ticket`, `sync-tests-to-tracker`, `self-heal-regression`, `jev-decisions`
-- `harness.config.json` + adaptadores documentados
-- Consola Next.js para correr los tres pipelines
-- **Mesa**, un inbox de soporte mínimo como aplicación bajo prueba
-- Page objects y un spec de Playwright de ejemplo
+- `harness.config.json` + documented adapters
+- A Next.js console to run the three pipelines
+- **Mesa**, a minimal support inbox as the app under test
+- Page objects and a sample Playwright spec
 
-## Cómo correrlo
+## How to run it
 
 ```bash
 npm install
@@ -22,15 +20,15 @@ npx playwright install chromium
 npm run dev
 ```
 
-La consola queda en [http://127.0.0.1:4477](http://127.0.0.1:4477).
+The console is at [http://127.0.0.1:4477](http://127.0.0.1:4477).
 
-Perfil de Mesa: `qa@mesa.test` / `mesa-qa`.
+Mesa profile: `qa@mesa.test` / `mesa-qa`.
 
 ```bash
 npm test
 ```
 
-Jev en vivo (opcional):
+Live Jev (optional):
 
 ```bash
 cp .env.example .env.local
@@ -39,8 +37,8 @@ cp .env.example .env.local
 
 ## Config
 
-Copiá `harness.config.example.json`. Los skills leen `issueTracker.type`, `testManagement.type`, `ciSource.type` y cargan un solo archivo en `references/`. Cómo agregar un proveedor: `docs/writing-an-adapter.md`.
+Copy `harness.config.example.json`. Skills read `issueTracker.type`, `testManagement.type`, `ciSource.type` and load a single file under `references/`. How to add a provider: `docs/writing-an-adapter.md`.
 
 ## Selector hierarchy
 
-`role` → `label` → `text` → `testId` → `CSS`. Los specs no llevan selectores inline.
+`role` → `label` → `text` → `testId` → `CSS`. Specs do not carry inline selectors.

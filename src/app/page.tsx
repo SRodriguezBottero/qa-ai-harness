@@ -9,19 +9,19 @@ const pipelines = [
     href: "/scaffold",
     title: "Scaffold",
     eyebrow: "Ticket → spec",
-    body: "Lee criterios de aceptación, los parte en cláusulas atómicas y genera un spec de Playwright con page objects. Modo adversarial por defecto.",
+    body: "Reads acceptance criteria, splits them into atomic clauses, and generates a Playwright spec with page objects. Adversarial mode by default.",
   },
   {
     href: "/sync",
     title: "Sync",
     eyebrow: "Spec → ticket",
-    body: "Un test = un caso. Crea tickets sin borrar lo existente y escribe el id de vuelta hacia el spec.",
+    body: "One test = one case. Creates tickets without deleting existing ones and writes the id back into the spec.",
   },
   {
     href: "/self-heal",
     title: "Self-heal",
-    eyebrow: "CI → fix o bloqueo",
-    body: "Clasifica fallas duras vs flaky. Un bloqueador de producto nunca se enmascara. Los fixes se agrupan por archivo disjunto.",
+    eyebrow: "CI → fix or block",
+    body: "Classifies hard failures vs flakes. A product blocker is never masked. Fixes are grouped by disjoint files.",
   },
 ];
 
@@ -30,22 +30,22 @@ export default function HomePage() {
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
       <header className="space-y-3">
         <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-          Primera rebanada usable
+          First usable slice
         </p>
         <h1 className="font-heading text-4xl sm:text-5xl">
-          Un harness de QA que cualquier equipo con Playwright puede adoptar.
+          A QA harness any Playwright team can adopt.
         </h1>
         <p className="max-w-2xl text-muted-foreground">
-          Los workflows viven en skills genéricos. Lo específico de cada equipo (tracker, CI, carpetas)
-          va en <code>harness.config.json</code> y en adaptadores. Jev decide barato: guardrail antes
-          de una acción riesgosa, triage después de un fail.
+          Workflows live in generic skills. Team-specific pieces (tracker, CI, folders) go in{" "}
+          <code>harness.config.json</code> and adapters. Jev decides cheaply: guardrail before a
+          risky action, triage after a fail.
         </p>
         <div className="flex flex-wrap gap-2">
           <Link href="/scaffold" className={cn(buttonVariants())}>
-            Generar un spec
+            Generate a spec
           </Link>
           <Link href="/mesa/login" className={cn(buttonVariants({ variant: "outline" }))}>
-            Abrir Mesa
+            Open Mesa
           </Link>
         </div>
       </header>
@@ -69,9 +69,10 @@ export default function HomePage() {
       <section className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Jev en el loop</CardTitle>
+            <CardTitle>Jev in the loop</CardTitle>
             <CardDescription>
-              System One: estado + preguntas tipadas, no un chat. Sin clave API corre el mock local.
+              System One: state plus typed questions, not a chat. Without an API key the local mock
+              runs.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
@@ -79,24 +80,25 @@ export default function HomePage() {
             <Badge variant="secondary">choice</Badge>
             <Badge variant="outline">score</Badge>
             <p className="mt-2 w-full text-sm text-muted-foreground">
-              Guardrail: ¿la acción toca producción o destruye datos? Triage: ¿regresión, flake o bloqueador?
+              Guardrail: does the action touch production or destroy data? Triage: regression, flake,
+              or blocker?
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>App bajo prueba</CardTitle>
+            <CardTitle>App under test</CardTitle>
             <CardDescription>
-              Mesa es un inbox de soporte mínimo. Usala para snapshots en vivo y para correr Playwright.
+              Mesa is a minimal support inbox. Use it for live snapshots and to run Playwright.
             </CardDescription>
           </CardHeader>
           <CardContent className="text-sm">
             <p>
-              Perfil QA: <code>qa@mesa.test</code> / <code>mesa-qa</code>
+              QA profile: <code>qa@mesa.test</code> / <code>mesa-qa</code>
             </p>
             <p className="mt-2 text-muted-foreground">
-              Selectores estables: roles, labels y <code>data-testid</code>. La jerarquía del harness es role →
-              label → text → testId → CSS.
+              Stable selectors: roles, labels, and <code>data-testid</code>. The harness hierarchy is
+              role → label → text → testId → CSS.
             </p>
           </CardContent>
         </Card>

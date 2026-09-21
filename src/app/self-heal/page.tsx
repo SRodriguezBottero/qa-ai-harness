@@ -40,18 +40,18 @@ export default function SelfHealPage() {
       <header>
         <h1 className="font-heading text-4xl">Self-heal</h1>
         <p className="mt-2 text-muted-foreground">
-          Parte las fallas en unidades sin archivos compartidos. Verificación en vivo es un gate: el
-          diff solo no alcanza. Un bloqueador no se parchea.
+          Splits failures into units with no shared files. Live verification is a gate: a diff alone
+          is not enough. A blocker is not patched.
         </p>
       </header>
       <Card>
         <CardHeader>
-          <CardTitle>Plan desde el reporte de CI</CardTitle>
-          <CardDescription>Fuente configurada: playwright-json.</CardDescription>
+          <CardTitle>Plan from the CI report</CardTitle>
+          <CardDescription>Configured source: playwright-json.</CardDescription>
         </CardHeader>
         <CardContent>
           <Button type="button" onClick={run} disabled={loading}>
-            {loading ? "Armando plan…" : "Armar unidades de fix"}
+            {loading ? "Building plan…" : "Build fix units"}
           </Button>
         </CardContent>
       </Card>
@@ -63,7 +63,7 @@ export default function SelfHealPage() {
       ) : null}
       {blockers.length ? (
         <Alert>
-          <AlertTitle>Bloqueadores — no enmascarar</AlertTitle>
+          <AlertTitle>Blockers — do not mask</AlertTitle>
           <AlertDescription>{blockers.join(" · ")}</AlertDescription>
         </Alert>
       ) : null}
@@ -82,7 +82,7 @@ export default function SelfHealPage() {
         </Card>
       ))}
       {!units.length && !blockers.length ? (
-        <p className="text-sm text-muted-foreground">Todavía no hay plan.</p>
+        <p className="text-sm text-muted-foreground">No plan yet.</p>
       ) : null}
     </div>
   );

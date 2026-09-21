@@ -52,19 +52,19 @@ export default function TriagePage() {
       <header>
         <h1 className="font-heading text-4xl">Jev triage</h1>
         <p className="mt-2 text-muted-foreground">
-          Clasifica un reporte de Playwright JSON. Un bloqueador no se “arregla” cambiando el test.
+          Classifies a Playwright JSON report. A blocker is not “fixed” by changing the test.
         </p>
       </header>
       <Card>
         <CardHeader>
-          <CardTitle>Reporte de ejemplo</CardTitle>
+          <CardTitle>Sample report</CardTitle>
           <CardDescription>
-            Timeout, selector-drift, flake por retry y un 500 de aplicación.
+            Timeout, selector-drift, a retry flake, and an application 500.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Button type="button" onClick={run} disabled={loading}>
-            {loading ? "Clasificando…" : "Correr triage"}
+            {loading ? "Classifying…" : "Run triage"}
           </Button>
         </CardContent>
       </Card>
@@ -78,7 +78,7 @@ export default function TriagePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Resultado
+              Result
               {source ? <Badge variant="outline">{source}</Badge> : null}
             </CardTitle>
           </CardHeader>
@@ -88,8 +88,8 @@ export default function TriagePage() {
                 <TableRow>
                   <TableHead>Test</TableHead>
                   <TableHead>Bucket</TableHead>
-                  <TableHead>Acción</TableHead>
-                  <TableHead>Señales</TableHead>
+                  <TableHead>Action</TableHead>
+                  <TableHead>Signals</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -118,7 +118,7 @@ export default function TriagePage() {
           </CardContent>
         </Card>
       ) : (
-        <p className="text-sm text-muted-foreground">Todavía no hay filas. Corré el triage de ejemplo.</p>
+        <p className="text-sm text-muted-foreground">No rows yet. Run the sample triage.</p>
       )}
     </div>
   );

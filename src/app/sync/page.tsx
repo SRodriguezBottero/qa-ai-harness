@@ -51,14 +51,14 @@ export default function SyncPage() {
       <header>
         <h1 className="font-heading text-4xl">Sync to tracker</h1>
         <p className="mt-2 text-muted-foreground">
-          Con <code>testManagement: none</code> solo se crean tickets de caso, sin gestor externo. Nunca
-          borra ni mueve lo que ya existe.
+          With <code>testManagement: none</code> only case tickets are created, with no external
+          manager. It never deletes or moves what already exists.
         </p>
       </header>
       <Card>
         <CardHeader>
-          <CardTitle>Ticket padre</CardTitle>
-          <CardDescription>Los casos nuevos se vinculan a este id.</CardDescription>
+          <CardTitle>Parent ticket</CardTitle>
+          <CardDescription>New cases are linked to this id.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="space-y-1">
@@ -66,7 +66,7 @@ export default function SyncPage() {
             <Input id="parent" value={parent} onChange={(e) => setParent(e.target.value)} />
           </div>
           <Button type="button" onClick={run} disabled={loading}>
-            {loading ? "Creando…" : "Crear casos"}
+            {loading ? "Creating…" : "Create cases"}
           </Button>
         </CardContent>
       </Card>
@@ -93,7 +93,7 @@ export default function SyncPage() {
           ))}
         </div>
       ) : (
-        <p className="text-sm text-muted-foreground">Todavía no hay casos creados.</p>
+        <p className="text-sm text-muted-foreground">No cases created yet.</p>
       )}
     </div>
   );
