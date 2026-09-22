@@ -1,5 +1,7 @@
 # QA AI Harness
 
+> **Status:** v0.1 open slice / playground for Playwright teams — not a production-ready SaaS.
+
 An AI-assisted QA harness for teams that already run **Playwright**. Cursor skills drive the workflows. Playwright runs the specs. **Jev** (TypeSafe System One) makes cheap, typed decisions: a guardrail before a risky action, triage after a fail.
 
 It is not a new test runner and not a replacement for your tracker. Workflow stays generic in publishable skills. Team-specific pieces (Jira, Linear, GitHub Issues, TestRail, Tricentis, Xray, Currents, GitHub Actions) live in adapters plus `harness.config.json`.
@@ -66,6 +68,10 @@ Jev is not a chat model. You send `state` plus typed questions (`noul`, `choice`
 
 Console: `/guardrail` and `/triage`.
 
+## Screenshot
+
+![Console scaffold + coverage matrix](docs/images/console-scaffold.png)
+
 ## How to run
 
 ```bash
@@ -116,3 +122,7 @@ Point Cursor (or another agent) at `skills/*/SKILL.md`. Do not load every `refer
 ## Mesa
 
 Mesa is a **sample** support inbox (login, ticket list, ticket detail, resolve). It exists so Playwright and the console have a stable UI. It is not a customer product. Seed tickets include `MESA-104` (used by the sample spec).
+
+## License
+
+[MIT](LICENSE)
