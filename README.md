@@ -68,10 +68,6 @@ Jev is not a chat model. You send `state` plus typed questions (`noul`, `choice`
 
 Console: `/guardrail` and `/triage`.
 
-## Screenshot
-
-![Console scaffold + coverage matrix](docs/images/console-scaffold.png)
-
 ## How to run
 
 ```bash
